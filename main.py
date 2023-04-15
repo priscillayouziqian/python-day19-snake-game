@@ -10,9 +10,18 @@ screen.tracer(0)
 
 snake = Snake()
 
+# use key binding (event listeners)
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
 game_is_on = True
 while game_is_on:
+    # use .update() to refresh the screen
     screen.update()
+    # use the timer to delay the refresh to control how often it happens
     time.sleep(0.1)
 
     snake.move()
